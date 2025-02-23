@@ -42,14 +42,18 @@ export default function Home() {
   }
 
   const handleStoreClick = async (store) => {
-    window.location.href = '/sorry'
     try {
-      await addDoc(collection(db, 'store_clicks'), {
-        storeType: store, // 'apple' 또는 'google'
+      const docRef = await addDoc(collection(db, 'store_clicks'), {
+        storeType: store,
         timestamp: serverTimestamp(),
       })
+      console.log(`Successfully logged ${store} store click with ID: ${docRef.id}`)
+      // Firebase 저장이 완료된 후 페이지 이동
+      window.location.href = '/sorry'
     } catch (error) {
-      console.error('Error logging store click:', error)
+      console.error(`Error logging ${store} store click:`, error)
+      // 에러가 발생해도 페이지 이동
+      window.location.href = '/sorry'
     }
   }
 
