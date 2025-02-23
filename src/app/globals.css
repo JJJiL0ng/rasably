@@ -1,21 +1,19 @@
+/* app/global.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --primary: #FC7E7A;
+    --primary-dark: #fb6c67;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.gradient-bg {
+  background: linear-gradient(135deg, #FC7E7A 0%, #FF9B98 100%);
+}
+
+.btn-primary {
+  @apply bg-[#FC7E7A] hover:bg-[#fb6c67] text-white font-bold py-3 px-6 rounded-full shadow-lg transform transition duration-200 ease-in-out hover:scale-105;
 }
