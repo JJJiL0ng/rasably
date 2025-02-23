@@ -108,7 +108,7 @@ export default function Home() {
         {/* Footer */}
         <div className="space-y-4">
           <p className="text-sm text-white/80">
-            Coming soon to your favorite app stores
+            Download the RASABLY app now
           </p>
           <div className="flex justify-center space-x-3 px-4">
             <img
